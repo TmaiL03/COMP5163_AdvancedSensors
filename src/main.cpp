@@ -1,8 +1,9 @@
-// ******************************************************************
-// Dallas Semiconductor DS18B20 Temperature Sensor Demo Program
-// COMP-10184
-// Mohawk College
-// library for Arduino framework
+// Student Name: Liam Tingley
+// Student Number: 100161568
+// Assignment: COMP-5163 - Advanced Sensors
+// Version: V1.0
+// Date: October 30th, 2026
+
 #include <Arduino.h>
 // 1-Wire sensor communication libary
 #include <OneWire.h>
@@ -20,7 +21,7 @@ DeviceAddress tempSensorAddress;
 bool sensorConnected;
 
 
-void getAddress(DeviceAddress tempSensorAddress) {
+void printAddress(DeviceAddress tempSensorAddress) {
    // Printing hexadecimal address.
    // Ref: https://forum.arduino.cc/t/how-to-get-ds18b20-address-es-as-a-text-string/1034110
    for(uint8_t i = 0; i < 8; i++)
@@ -43,7 +44,7 @@ void setup() {
  } else {
    sensorConnected = true;
    Serial.print("Found DS18B20 sensor with address ");
-   getAddress(tempSensorAddress);
+   printAddress(tempSensorAddress);
    Serial.println("Temperature Application");
  }
 
